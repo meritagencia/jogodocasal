@@ -63,3 +63,16 @@ if (unlockGalleryBtn && galleryGate && bookGallery) {
     bookGallery.classList.remove("is-blurred");
   });
 }
+
+// Track InitiateCheckout on checkout buttons click
+document.querySelectorAll('a[href*="pay.wiapy.com"]').forEach((button) => {
+  button.addEventListener("click", () => {
+    if (typeof fbq === "function") {
+      fbq("track", "InitiateCheckout", {
+        content_name: "O Jogo do Casal",
+        value: 17.90,
+        currency: "BRL"
+      });
+    }
+  });
+});
