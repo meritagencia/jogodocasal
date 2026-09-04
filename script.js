@@ -52,17 +52,6 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-// Age restriction gate / unlock preview
-const unlockGalleryBtn = document.getElementById("unlock-gallery-btn");
-const galleryGate = document.getElementById("gallery-gate");
-const bookGallery = document.getElementById("book-gallery");
-
-if (unlockGalleryBtn && galleryGate && bookGallery) {
-  unlockGalleryBtn.addEventListener("click", () => {
-    galleryGate.classList.add("is-unlocked");
-    bookGallery.classList.remove("is-blurred");
-  });
-}
 
 // Track InitiateCheckout on checkout buttons click
 document.querySelectorAll('a[href*="pay.wiapy.com"]').forEach((button) => {
